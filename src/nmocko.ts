@@ -10,13 +10,16 @@ import AppConfig from './config';
 import loggerDefault from './logger';
 import { startGraphQLAPIServer } from './server';
 import { createGraphQLApp } from './app';
+import { examplesServiceMock } from './graphql/Examples/examples.mock';
 
 const SERVER_PORT = AppConfig.server.port;
 startGraphQLAPIServer({
   serverPort: SERVER_PORT,
   logger: loggerDefault,
   graphqlApp: createGraphQLApp({
-    services: {},
+    services: {
+      examplesService: examplesServiceMock,
+    },
   }),
 });
 

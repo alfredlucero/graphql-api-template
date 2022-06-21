@@ -1,4 +1,4 @@
-// import { NexusGenObjects } from '../../../nexus-typegen';
+import { NexusGenObjects } from '../../../nexus-typegen';
 import loggerDefault, { GraphQLAPILogger } from '../../logger';
 import { examplesRepoDefault, ExamplesRepo, ExampleDb } from './examples.repo';
 import { ContextServiceInfo } from '../../context';
@@ -17,7 +17,7 @@ import { ContextServiceInfo } from '../../context';
 export interface ExamplesService {
   // We return back data that aligns with the schema defined in index.ts for this query
   // We also take in arguments like the query/mutation inputs if available and the context info that contains scopes and user information
-  getExamples: (contextInfo: ContextServiceInfo) => Promise<any> /*NexusGenObjects['Example'][]>*/;
+  getExamples: (contextInfo: ContextServiceInfo) => Promise<NexusGenObjects['Example'][]>;
 }
 
 interface ExamplesServiceDependencies {
@@ -25,7 +25,7 @@ interface ExamplesServiceDependencies {
   examplesRepo?: ExamplesRepo;
 }
 
-const adaptExamplesDb = (examplesDb: ExampleDb[]): any /* NexusGenObjects['Example'][]*/ => {
+const adaptExamplesDb = (examplesDb: ExampleDb[]): NexusGenObjects['Example'][] => {
   return examplesDb.map((exampleDb) => {
     return {
       id: exampleDb.id,
