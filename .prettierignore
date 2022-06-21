@@ -1,0 +1,2 @@
+# Ignore nexus generated types file
+nexus-typegen.ts

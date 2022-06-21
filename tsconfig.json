@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "pretty": true,
+    "sourceMap": true,
+    "target": "esnext",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "./dist",
+    "rootDir": "."
+  },
+  "include": ["./src/**/*.ts", "./nexus-typegen.ts"],
+  "exclude": ["node_modules"]
+}
