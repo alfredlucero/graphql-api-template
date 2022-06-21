@@ -16,6 +16,14 @@
     "lint": "lint-staged",
     "prepare": "husky install"
   },
+  "lint-staged": {
+    "*.{js,json,ts}": [
+      "prettier --write"
+    ],
+    "src/**/*.{js,ts}": [
+      "eslint --fix"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alfredlucero/graphql-api-template.git"
