@@ -25,7 +25,7 @@ export const examplesRepoDefault: ExamplesRepo = {
         message: 'Example 1',
       },
       {
-        id: 1,
+        id: 2,
         message: 'Example 2',
       },
     ];
